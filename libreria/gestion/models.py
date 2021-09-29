@@ -11,9 +11,11 @@ class ProductoModel(models.Model):
 
     produtoId = models.AutoField(primary_key=True, null=False, unique=True, db_column="id")
 
-    productoNombre = models.CharField(max_length=45, db_column="nombre,", null=False)
+    productoNombre = models.CharField(max_length=45, db_column="nombre", null=False)
 
     productoPrecio = models.DecimalField(max_digits=10, decimal_places=2, db_column="precio")
+
+    productoEstado = models.BooleanField(default=True, null = False, db_column="estado")
 
     productoUnidadMedida = models.TextField(choices=opcionesUM.choices, default=opcionesUM.UNIDAD, db_column="unidad_medida")
 
@@ -34,6 +36,8 @@ class ClienteModel(models.Model):
     clienteDocumento = models.CharField(max_length=12, db_column="documento", unique=True, verbose_name="documento")
 
     clienteDireccion = models.CharField(max_length=100, db_column="direccion", verbose_name="direccion")
+
+    clienteEstado = models.BooleanField(default=True, null = False, db_column="estado")
 
     def __str__(self):
         return self.clienteNombre
