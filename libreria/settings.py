@@ -152,3 +152,5 @@ TEST_RUNNER = "redgreenunittest.django.runner.RedGreenDiscoverRunner"
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_METHODS = ["GET", "POST"]
 CORS_ALLOW_HEADERS = ['Content-Type', 'origin', 'Authorization']
+
+STATIC_ROOT= BASE_DIR / "staticfiles"
